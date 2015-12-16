@@ -1,0 +1,4 @@
+#!/bin/bash
+        for i in '*.f90'; do
+            f95 -o $i.prog $i
+        done

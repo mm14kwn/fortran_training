@@ -1,0 +1,28 @@
+PROGRAM TWODTIDE
+IMPLICIT NONE
+
+REAL, PARAMETER :: Pi=3.1415927
+INTEGER, PARAMETER :: real_8_30 = SELECTED_REAL_KIND(P=8, R=30)
+INTEGER :: N, M, I, J
+REAL(KIND=real_8_30) :: dx, dy, dt, tau, fprime, tidal_period, amp, T, a1, a2, a3, a4, phase1, phase2, t
+REAL(KIND=real_8_30), DIMENSION(:), ALLOCATABLE :: a, u, v, vf, px, eta, ux, u, etaend, uf, kap
+LOGICAL :: inl
+PRINT*, 'INPUT N=xrange'
+READ*, N
+PRINT*, 'INPUT M=yrange'
+READ*, M
+dx=1/REAL(N)
+dy=dx
+PRINT*, 'INPUT TIDAL AMPLITUDE'
+READ*, amp
+PRINT*, 'INPUT TIDAL PERIOD'
+READ*, tidal_period
+PRINT*, 'INPUT MAX TIME'
+READ*, T
+PRINT*, 'INPUT tau'
+READ*, tau
+PRINT*, 'INPUT fprime'
+READ*, fprime
+PRINT*, 'INLETS? T/F'
+READ*, inl
+IF INL = .TRUE.
